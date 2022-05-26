@@ -1,0 +1,47 @@
+Banco de dados: é um conjunto organizado de dados, tipicamente armazenado em formato eletronico
+
+Existem tres tipos de banco de dados
+- Banco de dados de tipo plano (flat-type databases)
+Esse tipo de banco de dados sao comumente usados em formatos de texto simples. Como o proposito deles é manter um registro por linha, 
+eles tornam o acesso, o desempenho e as consultas muito rapidos. Exemplo desse tipo de banco de dados é encontrados em um arquivo .TXT, .CSV ou .INI
+Bancos desse tipo sao considerados planos, porque sao tabelas bidimensionais consistindo de linhas e colunas.
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+- Banco de dados Hierarquicos ( Hierarchical databases)
+É semelhante a uma estrutura em arvore( genealogica). Nesse tipo de banco, cada tabela "pai" pode ter varios filhos, mas cada filho pode ter apenas um pai.
+Importante lembrar que um grande banco de dados, uma tabela "pai" podera ter multipla tabelas filhos, e cada tabela filho, por sua vez, 
+podem ter seus proprios filhos, mas nenhuma tabela filho unico tera mais de um pai
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+- Banco de dados Relacionais (Relational databases)
+é semelhante ao hiearquico. Diferentemente dos bancos hierarquicos, no relacional, uma tabela em um banco de dados relacional pode ter varios pais.
+
+Cada tipo de banco de dados possui seus proprios recursos de design importantes.
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+Modelo de Dados
+Mostra a estrutura logica de um banco de dados incluindo relações e restrinções que determinam como os dados podem ser armazenados e acessados 
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+Entidade é um elemento caracterizado pelos dados que sao recolhidos na sua identificação vulgarmente designado por tabela
+
+A relação determina o modo como cada tabela se associa a registros de outras tabelas
+
+Tabela é o local onde serao armazenados todos os dados informados ao banco
+Coluna: Tambem chamado de atributo, é a caracteristica unica da tabela. Cada coluna deve ter um tipo de dado que sera o formato do dado ela armazenara as informações(texto, valor numerico, imagem, etc)
+Linha: São registros que foram armazenados na tabela. Tambem pode ser chamada de tupla dado
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+Entidade Forte: Sua existencia independe da entidade relacionada
+Entidade Fraca: Sua existencia depende da entidade relacionadda
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+Generalização: Quando duas entidades podem ser agrupadas, em virtude de suas semelhanças(atributos em comum), gerando uma superentidade
+Especialização: Quando uma entidade pode ser subdividdida, herdando atributos da entidade generica e, juntamente com seus atributos especificos, compor a sua lista de atributos
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+Entidade Associativa: Mapeia duas ou mais tabelas referenciando os atributos identificadores de cada tabela relacionada
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+Relacionamento binario envolve duas entidades
+Relacionamento ternarios envolve tres entidades
+Auto-Relacionamento: Quando a entidade se relaciona com ela mesmo
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+Atributos sao propriedades da entidade. Os atributos podem ser classificados como:
+Simples: Sao atributos que podem assumir apenas um valor por ocorrencia
+Composto: Sao atributos que podem ser dividos em outros atributos
+Opcionais: São atributos que nao possuem a obrigatoriedade de ocorrencia(preenchimento)
+Multivalorado: Sao atributos que podem assumir mais de um valor por ocorrencia
+Determinante: É um atributo ou conjunto de atributos que tem a capacidade de identificar unicamente uma ocorrencia em uma entidade(Atributo Identificador PK)
