@@ -24,14 +24,16 @@ Entidade é um elemento caracterizado pelos dados que sao recolhidos na sua iden
 A relação determina o modo como cada tabela se associa a registros de outras tabelas
 
 Tabela é o local onde serao armazenados todos os dados informados ao banco
-Coluna: Tambem chamado de atributo, é a caracteristica unica da tabela. Cada coluna deve ter um tipo de dado que sera o formato do dado ela armazenara as informações(texto, valor numerico, imagem, etc)
+Coluna: Tambem chamado de atributo, é a caracteristica unica da tabela. Cada coluna deve ter um tipo de dado que sera o formato do dado ela armazenara 
+as informações(texto, valor numerico, imagem, etc)
 Linha: São registros que foram armazenados na tabela. Tambem pode ser chamada de tupla dado
 -----------------------------------------------------------------------------------------------------------------------------------------------------
 Entidade Forte: Sua existencia independe da entidade relacionada
 Entidade Fraca: Sua existencia depende da entidade relacionadda
 -----------------------------------------------------------------------------------------------------------------------------------------------------
 Generalização: Quando duas entidades podem ser agrupadas, em virtude de suas semelhanças(atributos em comum), gerando uma superentidade
-Especialização: Quando uma entidade pode ser subdividdida, herdando atributos da entidade generica e, juntamente com seus atributos especificos, compor a sua lista de atributos
+Especialização: Quando uma entidade pode ser subdividida, herdando atributos da entidade generica e, 
+juntamente com seus atributos especificos, compor a sua lista de atributos
 -----------------------------------------------------------------------------------------------------------------------------------------------------
 Entidade Associativa: Mapeia duas ou mais tabelas referenciando os atributos identificadores de cada tabela relacionada
 -----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -44,4 +46,58 @@ Simples: Sao atributos que podem assumir apenas um valor por ocorrencia
 Composto: Sao atributos que podem ser dividos em outros atributos
 Opcionais: São atributos que nao possuem a obrigatoriedade de ocorrencia(preenchimento)
 Multivalorado: Sao atributos que podem assumir mais de um valor por ocorrencia
-Determinante: É um atributo ou conjunto de atributos que tem a capacidade de identificar unicamente uma ocorrencia em uma entidade(Atributo Identificador PK)
+Determinante: É um atributo ou conjunto de atributos que tem a capacidade de identificar unicamente 
+uma ocorrencia em uma entidade(Atributo Identificador PK)
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+Cardinalidade: É o numero de ocorrencias(vezes) que uma entidade A que esta sendo associado com ocorrencias de uma entidade B
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+Ha tres tipos de cardinalidade:
+Um-para-Um
+Um-para-Muitos ou Muitos-para-Um
+Muitos-para-Muitos
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+Cardinalidade Maxima: Numero Maximo de vezes que uma entidade A pode ocorrer em B. Podendo assumir o valor de 1 ou N
+Cardinalidade Minima: Numero minimo de vezes que uma entidade A pode ocorrer em B. Podendo assumir o valor de 0 e 1
+As Cardinalidades sao informadas inversamente. Exemplo: Um funcionario só pode esta em um departamento. 
+Portando em Departamento vai aparecer o "1"(A cardinalidade de funcionario cai dentro de Departamento). 
+Um Departamento pode ter varios funcionarios. Portando em funcionarios vai aparecer "N".
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+Do lado esquerdo é Minima e do lado Direito a Maxima
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+Normalização: Processo de eliminação de dados redudantes de determinado dominio(ou negocio), para obter maior eficiencia, confiabilidade e a integridade dos dados
+A nomarlização, por definição, é o processo de organizar dados para reduzir a redundancia, 
+dividindo um banco de dados em duas ou mais tabelas e em seguida definindo as relações entre elas
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+Tradução inicial de entidades e respectivos atributos
+Cada entidade é traduzida para uma tabela, Cada atributo da entidade constituira um campo da tabela criada, 
+o atributo identificador de cada entidade corresponde a chave primaria de cada tabela criada
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+Atributo multivalorado
+Cria-se uma tabela para cada atributo multivalorado, A tabela contem um campo para cada atributo multivalorado, 
+A tabela deve contem um campo correspondente a chaves primaria da entidade a que o atributo pertencia(chave estrangeira)
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+Atributo composto
+Incluir cada atributo como campo da propria tabela
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+Primeira Forma Normal
+Identificar as entidades, Adicionar atributos identificadores, Eliminar conjunto de dados repetidos(Eliminar os atributos mutivalorados e compostos)
+Não possuir tabelas aninhadas
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+Segunda Forma Normal
+Encontrar-se na Primeirra Forma Normal, Verificar a existencia de Dependencia Funcional(Dependencia funcional total, parcial)
+Dependencia Funcional: Estabelece uma relação de atributos dentro da tabela. A dependencia mais comum é a funcional. 
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+A dependencia funcional acontece sempre quando um atributo determina outro. 
+Exemplo; Codigo do Cliente > Nome do Cliente. Le-se Para descobrirmos o nome do cliente(dentro de um conjunto de clientes), 
+primeiramente precisamos saber qual é o codigo dele. Assim, o campo/atributo nome é dependente do campo/atributo código
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+Dependencia Funcional Total; Ocorre quando um ou mais atributos de uma entidade dependem totalmente da chave primaria composta(2 ou mais chaves primarias).
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+Dependencia Funcional Parcial: Constroi-se uma tabela para acomodar as dependencias funcionais parciais. 
+Quando os atribbutos apenas dependem de sua chaves primaria
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+Terceira Forma Normal
+Encontrar-se na Segunda Forma Normal, Eliminar dependencias transitivas
+Ocorre quando uma coluna não chave primaria depedende funcionalmemte de outra coluna(ou colunas) nao chave primaria. 
+Constroi-se uma nova tabela para dependencia transitiva
+-----------------------------------------------------------------------------------------------------------------------------------------------------
