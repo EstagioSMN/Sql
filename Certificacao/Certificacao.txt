@@ -101,3 +101,32 @@ Encontrar-se na Segunda Forma Normal, Eliminar dependencias transitivas
 Ocorre quando uma coluna não chave primaria depedende funcionalmemte de outra coluna(ou colunas) nao chave primaria. 
 Constroi-se uma nova tabela para dependencia transitiva
 -----------------------------------------------------------------------------------------------------------------------------------------------------
+Linguaguem de Definição de Dados -DDL
+CREATE, ALTER E DROP
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+Linguagem de Manipulação de Dados - DML
+INSERT, UPDATE, DELETE, MERGE e BULK INSET
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+Linguagem de Controle de Dados - DCL
+GRANT - Atribui privilegios de acesso do usuario a objeto do banco de dados
+REVOKE - Remove os privilegios de acesso aos objetos obtidos com o comando GRANT
+DENY - O comando é usado para impedir explicitamente que um usuario receba uma permisao especifica
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+Linguagem de Controle de Transações - TCL
+COMMIT - É usado para salvar permanentemente qualquer transação no banco de dados
+ROLLBACK - Este comando restaura o banco de dados para o ultimo estado commited
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+Identity 
+Faz com que o atributo selecionado seja incrementado autmaticamente, ou seja, ira gerar uma numeração automatica sem que seja necessario informar o valor no insert
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+UNIQUE
+Restrição que garante que o valor de um determinado campo nao se repita dentro de uma tabela, ou seja, os valores serao unicos
+Usado geralmente em campos como CPF
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+DEFAULT 
+Restrição que coloca um valor como padrao em uma determinada coluna. Usado quando se realiza um INSERT e o valor de um determinado campo nao for informado
+Usado geralmente para inserir datas
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+CHECK 
+É usada para limitar os valores que podem ser inseridos em uma coluna
+-----------------------------------------------------------------------------------------------------------------------------------------------------
